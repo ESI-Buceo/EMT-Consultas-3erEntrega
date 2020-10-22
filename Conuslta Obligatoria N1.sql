@@ -1,7 +1,5 @@
--- Dado un ID de diagnostico, mostrar la sesión de chat (FechaHora del mensaje, emisor,receptor, contenido)
-
 SELECT
-    a.id,
+    a.id_diagnostico,
     a.fecha_hora,
     p1.nombre As Paciente,
     p2.nombre As Medico,
@@ -29,5 +27,5 @@ FROM
                 ON
                     m.ci_persona = p2.ci
 WHERE
-    d.id = 18;
+    d.id = 2;
 

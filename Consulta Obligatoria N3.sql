@@ -1,12 +1,12 @@
--- Mostrar el id, y nombre de los síntomas que nunca fueron seleccionados para diagnostico
-
 SELECT 
-    s.id 
+    s.id AS Id 
 FROM 
     sintoma s 
         LEFT OUTER JOIN 
             genera g 
                 ON 
-                    s.id = g.id_sintoma_compone 
+                    s.id = g.id_sintoma
 WHERE 
-    g.id_sintoma_compone IS NULL;
+    g.id_sintoma IS NULL
+ORDER BY
+	s.id ASC;

@@ -1,9 +1,8 @@
--- Mostrar el ID, Nombre y Apellido de los médicos que mas consultas atendieron los últimos 30 días
-
 SELECT
-    ci AS Cedula,
-    nombre AS Nombre,
-    apellido AS Apellido
+    DISTINCT(a.ci_persona_medico) AS Cedula,
+    p.nombre AS Nombre,
+    p.apellido AS Apellido,
+    COUNT(DISTINCT(a.id_diagnostico)) AS "Cantidad de Chats"
 FROM 
     persona p
         JOIN
@@ -17,7 +16,7 @@ FROM
 WHERE
     a.fecha_hora > DATE_SUB(NOW(), INTERVAL 30 DAY)
 GROUP BY
-    ci
+    ci_persona_medico
 ORDER BY
     COUNT(ci) DESC;
 
