@@ -1,7 +1,5 @@
--- Mostrar el ID y Fecha de inicio de las sesiones de chat con más de 40 mensajes
-
 SELECT
-    id,
+    id_diagnostico,
     fecha_hora
 FROM
     atiende

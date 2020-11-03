@@ -1,5 +1,3 @@
--- Mostrar el ID de las enfermedades que no se hayan diagnosticado nunca.
-
 SELECT 
     e.id 
 FROM 
@@ -7,6 +5,6 @@ FROM
         LEFT OUTER JOIN 
             genera g 
                 ON 
-                    e.id = g.id_enfermedad_compone 
+                    e.id = g.id_enfermedad
 WHERE 
-    g.id_enfermedad_compone IS NULL;
+    g.id_enfermedad IS NULL;

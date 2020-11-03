@@ -1,5 +1,3 @@
--- Mostrar el ID, Nombre y Apellido de los médicos que no hayan atendido ninguna consulta
-
 SELECT
     p.ci,
     p.nombre,
